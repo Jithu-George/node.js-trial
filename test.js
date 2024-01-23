@@ -1,24 +1,35 @@
 const http= require('http');
 const fs=require('fs');
-const path=require('path');
-
-
-const filePath = path.join(__dirname,'..', 'new', 'amazon-homepage-clone', 'index.html');
+const l=require('lodash');
 
 const server = http.createServer((req,res)=>{
+   //lodash
+
+   const num=l.random(0,20);
+   console.log(num);
+
+    const greet= l.once(()=>{
+        console.log('hello');
+    });
+
+    greet()
+    greet()
+
     res.setHeader('Content-Type','text/html');
-    fs.readFile('../new/amazon-homepage-clone/index.html',(err,data)=>{
+
+    fs.readFile('./index.html',(err,data)=>{
         if(err){
             console.log(err);
             res.end();
         }
         else{
-           
             res.end(data);
         }
     });
 });
 
+
+
 server.listen(3000,'localhost',()=>{
-    console.log('lsitening for requests on port 3000');
+    console.log('listening for requests on port 3000');
 });
