@@ -12,8 +12,7 @@ const server = http.createServer((req,res)=>{
         console.log('hello');
     });
 
-    greet()
-    greet()
+    
 
     res.setHeader('Content-Type','text/html');
 
@@ -27,6 +26,7 @@ const server = http.createServer((req,res)=>{
         }
     });
 });
+
 
 
 
